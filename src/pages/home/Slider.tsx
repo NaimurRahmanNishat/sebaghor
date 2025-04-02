@@ -5,12 +5,12 @@ import { Autoplay } from 'swiper/modules';
 
 
 import bkash from "../../assets/slider/bkash.png";
-import nrbBank from "../../assets/slider/nrbbank.png";
+import nrbbank from "../../assets/slider/nrbbank.png";
 import primeBank from "../../assets/slider/primebank.jpg";
 import selcommerce from "../../assets/slider/selcommarce.png";
 import masterCard from "../../assets/slider/mastercard.jpg";
 import estrnBank from "../../assets/slider/estarnbank.png";
-const partners = [bkash, nrbBank, primeBank, selcommerce, masterCard, estrnBank];
+const partners = [bkash, nrbbank, primeBank, selcommerce, masterCard, estrnBank];
 
 import amadersomoy from "../../assets/slider/amadersomoy.jpg";
 import bussiness from "../../assets/slider/bussinesspost.png";
