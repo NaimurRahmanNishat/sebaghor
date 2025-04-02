@@ -1,4 +1,4 @@
-import { DatabaseBackup, Search, SlidersVertical } from "lucide-react";
+import { Search, SlidersVertical } from "lucide-react";
 import { useState } from "react";
 import HeroCard from "../home/HeroCard";
 import SearchBar from "./SearchBar";
@@ -7,19 +7,9 @@ import Filter from "./Filter";
 const Doctor = () => {
   const [hasResults, setHasResults] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(true);
-  const [mobileSearch, setMobileSearch] = useState<boolean>(false);
-  const [mobileFilter, setMobileFilter] = useState<boolean>(false);
 
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
-  };
-
-  const handleMobileSearch = () => {
-    setMobileSearch(!mobileSearch);
-  };
-
-  const hadleMobileFilter = () => {
-    setMobileFilter(!mobileFilter);
   };
 
   return (
@@ -74,24 +64,8 @@ const Doctor = () => {
             {/* doctor section */}
             <div className="md:pt-8 pb-10">
               <div className="md:hidden flex items-center gap-3 justify-end px-4">
-                <button onClick={handleMobileSearch}>
-                  <Search className="text-red-700" />
-                </button>
-                {mobileSearch && (
-                  <div>
-                    <SearchBar />
-                  </div>
-                )}
-                <button onClick={hadleMobileFilter}>
-                  <DatabaseBackup className="text-red-500" />
-                </button>
-                {
-                  mobileFilter && (
-                    <div>
-                      <Filter/>
-                    </div>
-                  )
-                }
+                <SearchBar />
+                <Filter />
               </div>
               <HeroCard />
             </div>
