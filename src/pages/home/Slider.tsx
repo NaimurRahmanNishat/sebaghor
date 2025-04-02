@@ -5,7 +5,7 @@ import { Autoplay } from 'swiper/modules';
 
 
 import bkash from "../../assets/slider/bkash.png";
-import nrbBank from "../../assets/slider/nrbBank.png";
+import nrbBank from "../../assets/slider/nrbbank.png";
 import primeBank from "../../assets/slider/primebank.jpg";
 import selcommerce from "../../assets/slider/selcommarce.png";
 import masterCard from "../../assets/slider/mastercard.jpg";
