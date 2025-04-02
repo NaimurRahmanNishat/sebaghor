@@ -3,7 +3,44 @@ import { useState } from "react";
 import HeroCard from "../home/HeroCard";
 import SearchBar from "./SearchBar";
 import Filter from "./Filter";
+import Articale from "../home/Articale";
 
+const departments = [
+  "Respiratory Medicine",
+  "Medicine",
+  "General Physician",
+  "ENT",
+  "Skin & VD",
+  "Dentistry",
+  "Psychiatry",
+  "Physiotherapy",
+  "Gastroenterology",
+  "Pediatrics (CHILD)",
+  "General practitioner",
+  "Cardio - Vascular Surgery",
+  "Orthopaedic",
+  "Diabetes & Endocrinology",
+  "Nutritionest",
+  "Pain Medicine",
+  "Colorectal Surgery(Piles)",
+  "Neuro-Surgery",
+  "Dermatology",
+  "Oncology (cancer)",
+  "Gynecology",
+  "COVID-19 (coronavirus) Specialist",
+  "EYE",
+  "Physical Medicine",
+  "Cardiology",
+  "Plastic Surgery",
+  "Gastroenterology",
+  "Urology",
+  "General surgery",
+  "Cancer (Oncology)",
+  "Nephrology (Kidney)",
+  "Hematology",
+  "Psychology",
+  "Vascular Surgery",
+];
 const Doctor = () => {
   const [hasResults, setHasResults] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(true);
@@ -37,11 +74,17 @@ const Doctor = () => {
                 <div className="pt-8">
                   {openMenu && (
                     <div className="flex flex-col gap-2">
-                      <p className="cursor-pointer hover:text-[#b90001]">All</p>
-                      <p className="cursor-pointer hover:text-[#b90001]">All</p>
-                      <p className="cursor-pointer hover:text-[#b90001]">All</p>
-                      <p className="cursor-pointer hover:text-[#b90001]">All</p>
-                      <p className="cursor-pointer hover:text-[#b90001]">All</p>
+                      <div>
+                        {departments.map((dept, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-5 py-2"
+                          >
+                            <input type="checkbox" />
+                            <p>{dept}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -70,6 +113,10 @@ const Doctor = () => {
               <HeroCard />
             </div>
           </div>
+        </div>
+        <div className="pt-20 pb-10">
+          <h2 className="text-2xl font-semibold">Related Articles</h2>
+          <Articale/>
         </div>
       </div>
     </>
