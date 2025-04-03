@@ -162,6 +162,7 @@ const doctors: Doctor[] = [
   },
 ];
 
+
 const itemsPerPage = 5;
 const HeroCard = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);

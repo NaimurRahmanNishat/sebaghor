@@ -78,14 +78,14 @@ const Articale = () => {
         </div>
         {/* Navigation Buttons */}
         <button
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 p-3 bg-black text-white disabled:opacity-50 z-10"
+          className="absolute left-2 top-1/2 cursor-pointer transform -translate-y-1/2 p-3 bg-black text-white disabled:opacity-50 z-10"
           onClick={prevSlide}
           disabled={currentIndex === 0}
         >
           <FaChevronLeft size={20} />
         </button>
         <button
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 bg-black text-white disabled:opacity-50 z-10"
+          className="absolute right-2 top-1/2 cursor-pointer transform -translate-y-1/2 p-3 bg-black text-white disabled:opacity-50 z-10"
           onClick={nextSlide}
           disabled={currentIndex >= totalCards - visibleCards}
         >
