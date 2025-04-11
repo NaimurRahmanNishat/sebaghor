@@ -28,7 +28,7 @@ const SearchBar = () => {
               className="px-4 py-2 w-full border"
               onChange={(e) => setHasResults(e.target.value.length > 0)}
             />
-            <div className="absolute top-0 right-0 px-8 py-[9px] bg-red-600 cursor-pointer">
+            <div className="absolute top-0 right-0 px-8 py-[9px] bg-simpleGreen cursor-pointer">
               <Search/>
             </div>
           </div>

@@ -6,16 +6,18 @@ const Hospital = () => {
   return (
     <div>
       <div className="md:pt-10 pt-6 pb-12">
-        <SearchBar/>
+        <SearchBar />
       </div>
+      {/* text pagination start */}
       <div className="pt-8 flex flex-col md:flex-row gap-12">
         <div className="w-full md:w-1/4">
-          <Filter/>
+          <Filter />
         </div>
         <div className="w-full md:w-3/4">
-          <HospitalCard/>
+          <HospitalCard />
         </div>
       </div>
+      {/* text pagination end */}
     </div>
   );
 };

@@ -10,11 +10,7 @@ import hospitalEight from "../../assets/hospital/hospitalEight.jpg";
 import hospitalNine from "../../assets/hospital/hospitalNine.jpg";
 import hospitalTen from "../../assets/hospital/hospitalTen.jpg";
 import { MoveLeft, MoveRight } from "lucide-react";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-} from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem } from "@/components/ui/pagination";
 
 interface Hospital {
   id: number;
@@ -64,7 +60,7 @@ const HospitalCard = () => {
               <h2 className="text-2xl font-semibold">{hospital.name}</h2>
               <p className="py-2">{hospital.address}</p>
               <div className="pt-12">
-                <button className="px-4 py-2 bg-red-600 font-medium hover:bg-red-700 text-white cursor-pointer">Details</button>
+                <button className="px-4 py-2 bg-simpleGreen font-medium hover:bg-darkGreen text-white cursor-pointer">Details</button>
               </div>
             </div>
           </div>
@@ -72,7 +68,7 @@ const HospitalCard = () => {
       ))}
 
       {/* Pagination Controls */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-4 mb-10">
       <Pagination>
           <PaginationContent>
             <PaginationItem>

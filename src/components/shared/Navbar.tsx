@@ -15,79 +15,101 @@ const Navbar = () => {
     setIsLanguageOpen(!isLanguageOpen);
   };
 
-
-
   return (
     <>
       <header className="h-20 shadow flex items-center justify-between">
         <div className="max-w-screen-xl container mx-auto px-4 md:px-0">
           <div className="flex items-center justify-between">
             {/* logo */}
-            <Link to="/" className="hover:scale-105 cursor-pointer">
+            <Link to="/" className="cursor-pointer">
               <img src={logo} alt="logo" />
             </Link>
             {/* desktop menu */}
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-5">
-              <li onClick={() => { setIsOpen(false); setIsLanguageOpen(false); }} className="relative">
+                <li
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsLanguageOpen(false);
+                  }}
+                  className="relative font-bold font-primary text-simpleGreen"
+                >
                   <NavLink
                     to="/doctor"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-red-600 font-semibold relative"
-                        : "hover:text-red-600"
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `font-primary font-bold relative group ${
+                        isActive ? "text-simpleGreen" : "hover:text-simpleGreen"
+                      }`
                     }
                   >
-                    {({ isActive }) => (
-                      <>
+                    {({ isActive }: { isActive: boolean }) => (
+                      <span className="relative inline-block">
                         Doctor
-                        {isActive && (
-                          <span className="absolute left-0 -bottom-8 w-full h-[3px] rounded bg-red-600"></span>
-                        )}
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-                <li onClick={() => { setIsOpen(false); setIsLanguageOpen(false); }} className="relative">
-                  <NavLink
-                    to="/hospital"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-red-600 font-semibold relative"
-                        : "hover:text-red-600"
-                    }
-                  >
-                    {({ isActive }) => (
-                      <>
-                        Hospital
-                        {isActive && (
-                          <span className="absolute left-0 -bottom-8 w-full h-[3px] rounded bg-red-600"></span>
-                        )}
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-                <li onClick={() => { setIsOpen(false); setIsLanguageOpen(false); }} className="relative">
-                  <NavLink
-                    to="/blog"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-red-600 font-semibold relative"
-                        : "hover:text-red-600"
-                    }
-                  >
-                    {({ isActive }) => (
-                      <>
-                        Seba Blog
-                        {isActive && (
-                          <span className="absolute left-0 -bottom-8 w-full h-[3px] rounded bg-red-600"></span>
-                        )}
-                      </>
+                        <span
+                          className={`absolute left-0 -bottom-7 h-[4px] bg-simpleGreen rounded transition-all duration-300 ${
+                            isActive ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
+                        ></span>
+                      </span>
                     )}
                   </NavLink>
                 </li>
                 <li
-                  className="relative flex items-center gap-1 cursor-pointer"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsLanguageOpen(false);
+                  }}
+                  className="relative font-bold font-primary text-simpleGreen"
+                >
+                  <NavLink
+                    to="/hospital"
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `font-primary font-bold relative group ${
+                        isActive ? "text-simpleGreen" : "hover:text-simpleGreen"
+                      }`
+                    }
+                  >
+                    {({ isActive }: { isActive: boolean }) => (
+                      <span className="relative inline-block">
+                        Hospital
+                        <span
+                          className={`absolute left-0 -bottom-7 h-[4px] bg-simpleGreen rounded transition-all duration-300 ${
+                            isActive ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
+                        ></span>
+                      </span>
+                    )}
+                  </NavLink>
+                </li>
+                <li
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsLanguageOpen(false);
+                  }}
+                  className="relative font-bold font-primary text-simpleGreen"
+                >
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `font-primary font-bold relative group ${
+                        isActive ? "text-simpleGreen" : "hover:text-simpleGreen"
+                      }`
+                    }
+                  >
+                    {({ isActive }: { isActive: boolean }) => (
+                      <span className="relative inline-block">
+                        Seba Blog
+                        <span
+                          className={`absolute left-0 -bottom-7 h-[4px] bg-simpleGreen rounded transition-all duration-300 ${
+                            isActive ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
+                        ></span>
+                      </span>
+                    )}
+                  </NavLink>
+                </li>
+                <li
+                  className="relative flex items-center gap-1 cursor-pointer font-bold font-primary text-simpleGreen"
                   onClick={handleClick}
                 >
                   Registration{" "}
@@ -97,32 +119,32 @@ const Navbar = () => {
                   {isOpen && (
                     <div className="bg-white shadow-2xl rounded-sm absolute z-10 top-14 right-0 w-72 py-2">
                       <ul className="flex flex-col px-4 gap-2">
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/hospital">
                             Hospital Registration
                           </NavLink>
                         </li>
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/doctor">
                             Doctor Registration
                           </NavLink>
                         </li>
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/agent">
                             Agents Registration
                           </NavLink>
                         </li>
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/diagnostic">
                             Diagnostic Center Registration
                           </NavLink>
                         </li>
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/insurance">
                             Insurance Company Registration
                           </NavLink>
                         </li>
-                        <li className="cursor-pointer hover:text-red-600">
+                        <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/nurse">
                             Nurse Registration
                           </NavLink>
@@ -135,19 +157,19 @@ const Navbar = () => {
                   className="relative flex items-center gap-1 cursor-pointer"
                   onClick={handleLanguageClick}
                 >
-                  <CircleUser /> <span>EN</span>
+                  <CircleUser /> <span className="font-bold text-simpleGreen">EN</span>
                   {isLanguageOpen && (
-                    <div className="bg-green-400 text-gray-800 shadow-xl absolute top-8 right-0 w-20 py-2 z-10">
-                      <ul className="flex flex-col px-2 gap-2">
-                        <li className="flex items-center gap-1 cursor-pointer hover:text-red-600">
+                    <div className="bg-gray-100 text-gray-800 rounded-sm shadow-2xl absolute top-8 right-0 w-20 py-2 z-10">
+                      <ul className="flex flex-col px-2 gap-2 font-primary font-bold">
+                        <li className="flex items-center gap-1 cursor-pointer hover:text-simpleGreen">
                           <CircleUser />
                           EN
                         </li>
-                        <li className="flex items-center gap-1 cursor-pointer hover:text-red-600">
+                        <li className="flex items-center gap-1 cursor-pointer hover:text-simpleGreen">
                           <CircleUser />
                           BN
                         </li>
-                        <li className="flex items-center gap-1 cursor-pointer hover:text-red-600">
+                        <li className="flex items-center gap-1 cursor-pointer hover:text-simpleGreen">
                           <CircleUser />
                           FR
                         </li>
@@ -156,7 +178,7 @@ const Navbar = () => {
                   )}
                 </li>
                 <Link to="/login">
-                  <Button className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+                  <Button className="bg-simpleGreen hover:bg-darkGreen text-white cursor-pointer">
                     Login
                   </Button>
                 </Link>
@@ -165,7 +187,7 @@ const Navbar = () => {
             {/* mobile menu */}
             <div className="md:hidden flex">
               <button>
-                <MobileMenu/>
+                <MobileMenu />
               </button>
             </div>
           </div>
