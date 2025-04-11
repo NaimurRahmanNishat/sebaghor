@@ -1,12 +1,13 @@
 import { Link, NavLink } from "react-router";
 import logo from "../../assets/logo.png";
 import { ChevronDown, CircleUser } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScroll, setIsScroll] = useState<boolean>(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -15,14 +16,28 @@ const Navbar = () => {
     setIsLanguageOpen(!isLanguageOpen);
   };
 
+  useEffect(()=>{
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  },[]);
+
   return (
     <>
-      <header className="h-20 shadow flex items-center justify-between">
+      <header className={`fixed w-full top-0 z-50 h-20 flex items-center justify-between transition-all duration-300 ${isScroll ? "bg-white shadow-md text-black" : "bg-transparent text-white"}`}>
         <div className="max-w-screen-xl container mx-auto px-4 md:px-0">
           <div className="flex items-center justify-between">
             {/* logo */}
             <Link to="/" className="cursor-pointer">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" className="w-44 h-16"/>
             </Link>
             {/* desktop menu */}
             <nav className="hidden md:flex">
@@ -118,7 +133,7 @@ const Navbar = () => {
                   </span>
                   {isOpen && (
                     <div className="bg-white shadow-2xl rounded-sm absolute z-10 top-14 right-0 w-72 py-2">
-                      <ul className="flex flex-col px-4 gap-2">
+                      <ul className="flex flex-col px-4 gap-2 font-medium">
                         <li className="cursor-pointer text-slate-700 hover:text-simpleGreen">
                           <NavLink to="/registration/hospital">
                             Hospital Registration
@@ -157,7 +172,7 @@ const Navbar = () => {
                   className="relative flex items-center gap-1 cursor-pointer"
                   onClick={handleLanguageClick}
                 >
-                  <CircleUser /> <span className="font-bold text-simpleGreen">EN</span>
+                  <CircleUser className="text-black"/> <span className="font-bold text-simpleGreen">EN</span>
                   {isLanguageOpen && (
                     <div className="bg-gray-100 text-gray-800 rounded-sm shadow-2xl absolute top-8 right-0 w-20 py-2 z-10">
                       <ul className="flex flex-col px-2 gap-2 font-primary font-bold">
