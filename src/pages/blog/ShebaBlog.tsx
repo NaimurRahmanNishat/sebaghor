@@ -1,165 +1,87 @@
-import sebaOne from "../../assets/seba/sebaOne.jpg";
-import sebaTwo from "../../assets/seba/sebaTwo.jpg";
-import sebaThree from "../../assets/seba/sebaThree.jpg";
-import sebaFour from "../../assets/seba/sebaFour.jpeg";
-import sebaFive from "../../assets/seba/sebaFive.png";
-import sebaSix from "../../assets/seba/sebaSix.jpg";
-import sebaSeven from "../../assets/seba/sebaSeven.jpg";
-import sebaEight from "../../assets/seba/sebaEight.jpeg";
-import sebaNine from "../../assets/seba/sebaNine.jpg";
-import sebaTen from "../../assets/seba/sebaTen.png";
-import sebaEleven from "../../assets/seba/sebaEleven.jpg";
-import sebaTwelve from "../../assets/seba/sebaTwelve.jpg";
-import sebaThirteen from "../../assets/seba/sebaThertin.jpg";
-import sebaFourteen from "../../assets/seba/sebaFourteen.jpg";
-import sebaFifteen from "../../assets/seba/sebaFiften.jpg";
+  import imageOne from "../../assets/seba/blogOne.jpg";
+  import imageTwo from "../../assets/seba/blogTwo.jpg";
+  import imageThree from "../../assets/seba/blogThree.jpg";
+  import imageFour from "../../assets/seba/blogFour.jpg";
+  import imageFive from "../../assets/seba/blogFive.png";
+  import imageSix from "../../assets/seba/blogSix.jpg";
+  import imageSeven from "../../assets/seba/blogSeven.jpg";
+  import imageEight from "../../assets/seba/blogEight.jpg";
+  import imageNine from "../../assets/seba/blogNine.png";
+  import { ChevronRight, Clock4 } from "lucide-react";
+  import { Link } from "react-router";
+  import { JSX } from "react/jsx-runtime";
 
-const sebaBlogs = [
-  {
-    id: 1,
-    image: sebaOne,
-    title: "অর্থোপেডিক চিকিৎসা",
-    description:
-      "শিশুদের জন্মগত পায়ের ত্রুটি এবং শিশুদের জন্মগত পা বাঁকার চিকিৎসা",
-  },
-  {
-    id: 2,
-    image: sebaTwo,
-    title: "ত্বক ও এলার্জি",
-    description:
-      "দাম্পত্যজীবনে কলহ,হতাশা,অস্থিরতা,হতাশা,কিংবা পারষ্পরিক সম্পর্কের টানাপোড়েন",
-  },
-  {
-    id: 3,
-    image: sebaThree,
-    title: "ত্বক ও এলার্জি",
-    description:
-      "অনেকে আমার কাছে তার বয়স অনুযায়ী কিভাবে ত্বকের যত্ন নিবেন তা জানতে চেয়েছেন।",
-  },
-  {
-    id: 4,
-    image: sebaFour,
-    title: "ত্বক ও এলার্জি",
-    description: "দাঁদ রোগ।ডা.মোঃ মুরাদ হোসেন",
-  },
-  {
-    id: 5,
-    image: sebaFive,
-    title: "Corona News",
-    description: "করোনাঃ আতংক নয়,করুন জয় । ডা.ফাতেমা খান",
-  },
-  {
-    id: 6,
-    image: sebaSix,
-    title: "Corona News",
-    description: "ঘরে বসে ডাক্তার দেখাতে ইন্সটল করুন সেবাঘর অ্যাপ।",
-  },
-  {
-    id: 7,
-    image: sebaSeven,
-    title: "Corona News",
-    description:
-      "কাজী অক্সিজেন লিমিটেড - জরুরী প্রয়োজনে অক্সিজেনের চাহিদা পূরণে।",
-  },
-  {
-    id: 8,
-    image: sebaEight,
-    title: "ত্বক ও এলার্জি",
-    description: "হাত-পায়ের তালু ঘামাঃ কারণ ও প্রতিকার। ডা.মোঃ মুরাদ হোসেন",
-  },
-  {
-    id: 9,
-    image: sebaNine,
-    title: "টিউটোরিয়াল",
-    description:
-      "যেভাবে সেবাঘর Apps টি ব্যাবহার করে ডাক্তারের এপয়েন্টমেন্ট নিবেন",
-  },
-  {
-    id: 10,
-    image: sebaTen,
-    title: "মেডিসিন",
-    description: "Corona and dengue awareness campaign",
-  },
-  {
-    id: 11,
-    image: sebaEleven,
-    title: "ত্বক ও এলার্জি",
-    description: "ছুলি রোগঃ কারণ,লক্ষণ ও প্রতিকার।ডাঃ মোঃ মুরাদ হোসেন",
-  },
-  {
-    id: 12,
-    image: sebaTwelve,
-    title: "ত্বক ও এলার্জি",
-    description: "ত্বকের যত্ন। ডা.মোঃমুরাদ হোসেন",
-  },
-  {
-    id: 13,
-    image: sebaThirteen,
-    title: "ত্বক ও এলার্জি",
-    description: "শীতে ত্বকের যত্ন। ডা.মোঃ মুরাদ হোসেন",
-  },
-  {
-    id: 14,
-    image: sebaFourteen,
-    title: "Corona News",
-    description: "করোনাভাইরাস: বাংলাদেশে কি ওষুধের যথেষ্ট যোগান থাকবে?",
-  },
-  {
-    id: 15,
-    image: sebaFifteen,
-    title: "মেডিসিন",
-    description:
-      "Hypertension বা উচ্চ রক্তচাপ - ডাঃ মোঃ আরিফুল ইসলাম, নবজাতক ও শিশুরোগ বিশেষজ্ঞ",
-  },
-];
+  interface Blog {
+    id: number;
+    image: string;
+    icon: JSX.Element;
+    time: string;
+    title: string;
+    description: string;
+  }
 
-const ShebaBlog = () => {
-  return (
-    <div>
-      <div className="flex flex-col md:flex-row gap-12 md:py-16 ">
-        {/* left side */}
-        <div className="w-full md:w-[80%]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sebaBlogs.map((blog) => (
-              <div
-                key={blog.id}
-                className="border rounded-xl p-4 shadow-md bg-white"
-              >
+  const blogs: Blog[] = [
+    {id: 1, image: imageOne, icon: <Clock4/>, time: "03 Sep 2024", title: "Nutritious Fruits for Better Health and Wellness", description: "If you want to eat fruits that promote health and wellness, here are some highly nutritious options. These fruits are rich in vitamins, minerals, antioxidants, and fiber, which help keep the body healthy and strengthen the immune system."},
+    {id: 2, image: imageTwo, icon: <Clock4/>, time: "13 Sep 2023", title: "Mental and Physical Health Connection", description: "In today’s fast-paced world, the relationship between mental and physical health is more important than ever. While they are often treated as separate, mental and physical health are deeply interconnected, influencing each other in powerful ways. Recognizing this connection and adopting a holistic approach to well-being is key to achieving a balanced, healthy life."},
+    {id: 3, image: imageThree, icon: <Clock4/>, time: "20 Dec 2023", title: "Exercise and Chronic Disease Prevention", description: "Chronic diseases, including heart disease, diabetes, and cancer, are leading causes of death and disability worldwide. While genetics, environmental factors, and lifestyle choices play significant roles in their development, one of the most effective ways to prevent and manage chronic diseases is through regular exercise. Whether you're aiming to enhance your well-being or reduce the risk of chronic conditions, integrating physical activity into your daily routine is a powerful strategy."},
+    {id: 4, image: imageFour, icon: <Clock4/>, time: "16 Jan 2024", title: "Special Treatment", description: "Special treatment refers to the personalized care, attention, or service given to an individual based on their specific needs, preferences, or circumstances. This approach recognizes that everyone is different and that a one-size-fits-all solution is often inadequate."},
+    {id: 5, image: imageFive, icon: <Clock4/>, time: "21 Feb 2024", title: "Take good care to your children", description: "Taking good care of your children is one of the most important responsibilities you will ever have. It involves more than just providing for their basic needs; it also includes nurturing their emotional, physical, and mental well-being. Here are some essential tips on how to take good care of your children and ensure they grow up healthy, happy, and well-adjusted."},
+    {id: 6, image: imageSix, icon: <Clock4/>, time: "15 Apr 2024", title: "How Can You Formulate a Diet Depending on Your Goals", description: "A comprehensive guide to selecting the best health card for your family, including key features to consider and how to match coverage with your needs."},
+    {id: 7, image: imageSeven, icon: <Clock4/>, time: "19 Jun 2024", title: "How to Cope With Feeling Unwell During Pregnancy", description: "Pregnancy can be an exciting time, but it can also come with various discomforts and health challenges. Feeling unwell during pregnancy is common and can be caused by a range of factors, from morning sickness to hormonal changes. Here’s a guide to help you manage and cope with these feelings effectively"},
+    {id: 8, image: imageEight, icon: <Clock4/>, time: "19 Aug 2024", title: "Essential Foods for Maintaining a Healthy Body", description: "Maintaining a healthy body requires a balanced diet that provides all the necessary nutrients. Here’s a step-by-step guide to incorporating essential foods into your daily meals:"},
+    {id: 9, image: imageNine, icon: <Clock4/>, time: "01 Sep 2024", title: "Maintaining Physical Health", description: "Physical health is a cornerstone of our daily lives. It enables us to perform daily tasks efficiently and protects us from various diseases. To stay physically healthy, regular exercise, a balanced diet, and adequate rest are crucial."},
+  ]
+  const ShebaBlog = () => {
+    return (
+      <div className="container mx-auto py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {blogs.map((blog) => (
+            <div key={blog.id} className="border rounded-lg shadow rounded-t-lg">
+              <Link to={`/blog/${blog.id}`}>
+              <div className="overflow-hidden h-72 mb-4 rounded-t-lg">
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-48 object-cover cursor-pointer hover:scale-105 transition-transform duration-300 rounded-lg mb-3"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110 rounded-t-lg"
                 />
-                <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-                <p className="text-sm text-gray-600">{blog.description}</p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* right side */}
-        <div className="w-full md:w-[20%]">
-          {/* You can add popular blogs, tags, or sidebar content here */}
-          <div className="border h-fit rounded-sm py-4 px-3">
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Treatment help desk</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Question and Answer</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Corona News</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">GYN And OBS</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">টিউটোরিয়াল</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Offer</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">National</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">ত্বক ও এলার্জি</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Colorectal Surgery</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">মেডিসিন</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Child Doctor</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">ENT</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">EYE</p>
-            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">অর্থোপেডিক চিকিৎসা</p>
-          </div>
+              </Link>
+              <div className="flex items-center text-md font-bold text-gray-700 mb-2 px-5">
+                {blog.icon}
+                <span className="ml-1">{blog.time}</span>
+              </div>
+              <Link
+                to={`/blog/${blog.id}`}
+                className="group relative block px-4 mb-2"
+              >
+                <h3 className="text-lg text-lightGreen font-bold inline-block relative">
+                  <span className="relative inline-block">
+                    {blog.title}
+                    <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-simpleGreen transition-all duration-500 group-hover:w-full"></span>
+                  </span>
+                </h3>
+              </Link>
+              <p className="text-md text-gray-700 px-4">
+                {blog.description.length > 100
+                  ? blog.description.slice(0, 100) + "..."
+                  : blog.description}
+              </p>
+              <Link
+                to={`/blog/${blog.id}`}
+                className="group relative inline-block px-4 py-2 text-red-600 mb-4"
+              >
+                <div className="flex gap-0.5 hover:text-simpleGreen font-semibold">
+                  Read more <span className="pt-0.5"><ChevronRight /></span>
+                </div>
+                <span
+                  className="absolute left-4 bottom-3 h-[1px] w-0 bg-simpleGreen  rounded transition-all duration-300 group-hover:w-[calc(100%-2rem)]"
+                ></span>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default ShebaBlog;
+  export default ShebaBlog;

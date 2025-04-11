@@ -16,6 +16,7 @@ import Contact from "@/pages/contact/Contact";
 import Privacy from "@/pages/privacy/Privacy";
 import Terms from "@/pages/terms/Terms";
 import Refund from "@/pages/refund/Refund";
+import Blog from "@/pages/blogId/Blog";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <ShebaBlog/>,
+      },
+      {
+        path: "/blog/:id",
+        element: <Blog/>,
       },
       {
         path: "/registration/hospital",
