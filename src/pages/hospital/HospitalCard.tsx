@@ -10,6 +10,11 @@ import hospitalEight from "../../assets/hospital/hospitalEight.jpg";
 import hospitalNine from "../../assets/hospital/hospitalNine.jpg";
 import hospitalTen from "../../assets/hospital/hospitalTen.jpg";
 import { MoveLeft, MoveRight } from "lucide-react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+} from "@/components/ui/pagination";
 
 interface Hospital {
   id: number;
@@ -68,21 +73,50 @@ const HospitalCard = () => {
 
       {/* Pagination Controls */}
       <div className="flex justify-center gap-2 mt-4">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className={`px-4 py-2 ${currentPage === 1 ? 'bg-gray-100 disabled:opacity-0 cursor-not-allowed' : 'bg-gray-100 cursor-pointer hover:text-red-700'} text-white font-medium`}
-        >
-          <MoveLeft className="w-6 h-6 text-red-600"/>
-        </button>
-        <p className="flex gap-4 px-4 py-1 font-semibold"><span className="px-4 py-2 bg-gray-200 shadow text-red-600">{currentPage}</span><span className="px-4 py-2 bg-gray-200 shadow text-red-600">{totalPages}</span></p>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className={`px-4 py-2 ${currentPage === totalPages ? 'bg-gray-100 disabled:opacity-0 cursor-not-allowed' : 'bg-gray-100 cursor-pointer hover:text-red-700'} text-white font-medium`}
-        >
-          <MoveRight className="w-6 h-6 text-red-600"/>
-        </button>
+      <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`px-2 py-2 border cursor-pointer rounded ${
+                  currentPage === 1
+                    ? "text-gray-400 disabled:opacity-30 cursor-not-allowed"
+                    : "text-black"
+                }`}
+              >
+                <MoveLeft size={16} className="text-red-600"/>
+              </button>
+            </PaginationItem>
+            {[...Array(totalPages)].map((_, index) => (
+              <PaginationItem key={index}>
+                <button
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={`px-3 py-1 border rounded ${
+                    currentPage === index + 1
+                      ? "bg-[#198754] text-white"
+                      : "hover:bg-gray-100"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`px-2 py-2 border cursor-pointer rounded ${
+                  currentPage === totalPages
+                    ? "text-gray-400 disabled:opacity-30 cursor-not-allowed"
+                    : "text-black"
+                }`}
+              >
+                <MoveRight size={16} className="text-red-600"/>
+              </button>
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </div>
   );

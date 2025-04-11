@@ -1,10 +1,11 @@
 import { Search } from "lucide-react";
 import { Link } from "react-router";
+import s from "../../assets/s.png";
 
 const Banner = () => {
   return (
     <>
-      <div className="absolute h-[600px] bg-black/75 left-0 w-full">
+      <div className="absolute h-[600px] left-0 w-full bg-cover bg-center" style={{ backgroundImage: `url(${s})` }}>
         <div className="max-w-screen-xl mx-auto container px-4 md:px-0">
           <div className="md:px-24 md:pt-32 pt-16 md:pb-32 pb-16 flex flex-col">
             <h3 className="text-3xl font-bold text-white pb-4">

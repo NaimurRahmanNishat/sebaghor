@@ -89,6 +89,7 @@ const Filter = () => {
   const handleOpenClickDevision = () => {
     setIsOpenDivision(!isOpenDevision);
   };
+  
   return (
     <div className="pb-12">
       <div className="bg-gray-100">

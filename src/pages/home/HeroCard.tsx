@@ -1,4 +1,11 @@
-import { Check, MessageSquareMore, Phone, Video } from "lucide-react";
+import {
+  Check,
+  MessageSquareMore,
+  MoveLeft,
+  MoveRight,
+  Phone,
+  Video,
+} from "lucide-react";
 import doctorOne from "../../assets/doctorOne.png";
 import doctorTwo from "../../assets/doctorTwo.png";
 import doctorThree from "../../assets/doctorThree.jpg";
@@ -10,6 +17,11 @@ import doctorEight from "../../assets/doctoreight.jpg";
 import doctorNine from "../../assets/doctornine.png";
 import doctorTen from "../../assets/doctorten.jpg";
 import { useState } from "react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+} from "@/components/ui/pagination";
 
 interface Doctor {
   id: number;
@@ -162,7 +174,6 @@ const doctors: Doctor[] = [
   },
 ];
 
-
 const itemsPerPage = 5;
 const HeroCard = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -199,7 +210,7 @@ const HeroCard = () => {
             </div>
             <div className="px-0 md:px-4 text-center md:text-start">
               <h2 className="text-xl font-semibold">{doctor.name}</h2>
-              <h4 className="text-md font-medium text-red-700">
+              <h4 className="text-md font-medium text-[#198754]">
                 {doctor.degree}
               </h4>
               <p className="text-md text-gray-600">{doctor.specialization}</p>
@@ -209,15 +220,15 @@ const HeroCard = () => {
           </div>
           <div className="relative md:w-[30%] pt-5 md:pt-0 md:border-l px-3 flex flex-col gap-2">
             <div className="flex gap-2 mb-2">
-              <Check className="text-red-600 rounded-full bg-red-100" />
+              <Check className="text-[#198754] rounded-full bg-red-100" />
               <h3 className="text-md text-gray-600">{doctor.experience}</h3>
             </div>
             <div className="flex gap-2 mb-2">
-              <Check className="text-red-600 rounded-full bg-red-100" />
+              <Check className="text-[#198754] rounded-full bg-red-100" />
               <h3 className="text-md text-gray-600">{doctor.code}</h3>
             </div>
             <div className="flex gap-2 mb-2">
-              <Check className="text-red-600 rounded-full bg-red-100" />
+              <Check className="text-[#198754] rounded-full bg-red-100" />
               <h3 className="text-md text-gray-600">Fees: {doctor.fees}</h3>
             </div>
             <div className="pt-3 pb-3 flex flex-col items-center gap-4 text-center">
@@ -228,7 +239,7 @@ const HeroCard = () => {
               </div>
             </div>
             <div>
-              <button className="xl:absolute xl:-right-[90px] xl:top-14 xl:rotate-90 px-4 py-2 text-red-700 font-medium border border-gray-200 cursor-pointer transition duration-300 group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600">
+              <button className="xl:absolute xl:-right-[90px] rounded-sm xl:top-14 xl:rotate-90 px-4 py-2 text-[#198754] font-medium border cursor-pointer transition duration-300 group-hover:bg-[#198754] group-hover:text-white">
                 Book Appointment
               </button>
             </div>
@@ -236,27 +247,51 @@ const HeroCard = () => {
         </div>
       ))}
       <div className="flex justify-center items-center gap-4 mt-4">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 cursor-pointer rounded-md disabled:opacity-0"
-        >
-          Previous
-        </button>
-        <p className="text-lg font-medium">
-          {" "}
-          <span className="px-3 py-1 border text-red-500">
-            {currentPage}
-          </span>{" "}
-          <span className="px-3 py-1 border">{totalPages}</span>
-        </p>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded-md cursor-pointer disabled:opacity-50"
-        >
-          Next
-        </button>
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+                className={`px-2 py-2 border cursor-pointer rounded ${
+                  currentPage === 1
+                    ? "text-gray-400 disabled:opacity-30 cursor-not-allowed"
+                    : "text-black"
+                }`}
+              >
+                <MoveLeft size={16} className="text-red-600"/>
+              </button>
+            </PaginationItem>
+
+            {[...Array(totalPages)].map((_, index) => (
+              <PaginationItem key={index}>
+                <button
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={`px-3 py-1 border rounded ${
+                    currentPage === index + 1
+                      ? "bg-[#198754] text-white"
+                      : "hover:bg-gray-100"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className={`px-2 py-2 border cursor-pointer rounded ${
+                  currentPage === totalPages
+                    ? "text-gray-400 disabled:opacity-30 cursor-not-allowed"
+                    : "text-black"
+                }`}
+              >
+                <MoveRight size={16} className="text-red-600"/>
+              </button>
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
       </div>
     </div>
   );

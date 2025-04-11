@@ -141,20 +141,20 @@ const ShebaBlog = () => {
         <div className="w-full md:w-[20%]">
           {/* You can add popular blogs, tags, or sidebar content here */}
           <div className="border h-fit rounded-sm py-4 px-3">
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Treatment help desk</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Question and Answer</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Corona News</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">GYN And OBS</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">টিউটোরিয়াল</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Offer</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">National</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">ত্বক ও এলার্জি</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Colorectal Surgery</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">মেডিসিন</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">Child Doctor</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">ENT</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">EYE</p>
-            <p className="pt-1.5 pb-1.5 text-red-800 font-medium">অর্থোপেডিক চিকিৎসা</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Treatment help desk</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Question and Answer</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Corona News</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">GYN And OBS</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">টিউটোরিয়াল</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Offer</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">National</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">ত্বক ও এলার্জি</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Colorectal Surgery</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">মেডিসিন</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">Child Doctor</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">ENT</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">EYE</p>
+            <p className="pt-1.5 pb-1.5 text-[#1FAB89] font-medium">অর্থোপেডিক চিকিৎসা</p>
           </div>
         </div>
       </div>
