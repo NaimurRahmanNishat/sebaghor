@@ -86,12 +86,12 @@ const router = createBrowserRouter([
       {
         path: "/refund",
         element: <Refund/>
-      }
+      },
+      {
+        path: "/login",
+        element: <Login/>
+      },
     ],
-  },
-  {
-    path: "/login",
-    element: <Login/>
   },
 ]);
 

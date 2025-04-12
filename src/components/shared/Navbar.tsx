@@ -18,7 +18,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
         setIsScroll(true);
       } else {
         setIsScroll(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`fixed w-full top-0 z-50 h-20 flex items-center justify-between transition-all duration-300 ${isScroll ? "bg-white shadow-md text-black" : "bg-transparent text-white"}`}>
+      <header className={`w-full fixed h-20 flex items-center justify-between transition-all translate-y-[-0px] duration-500 ease-in-out z-50 ${isScroll ? "bg-white shadow-lg" :  "bg-white shadow translate-y-[-0px]"}`}>
         <div className="max-w-screen-xl container mx-auto px-4 md:px-0">
           <div className="flex items-center justify-between">
             {/* logo */}
