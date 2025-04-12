@@ -1,21 +1,21 @@
 import Banner from "./Banner";
-import Details from "./Details";
+// import Details from "./Details";
 import HeroCard from "./HeroCard";
 import Slider from "./Slider";
-import Testimonial from "./Testimonial";
+// import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="pt-[600px] pb-20">
+      <div className=" pb-20">
         <HeroCard />
       </div>
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Slider />
-      <div className="pt-[900px]">
+      {/* <div className="pt-[900px]">
         <Details />
-      </div>
+      </div> */}
     </div>
   );
 };
