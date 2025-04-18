@@ -12,7 +12,9 @@ const Home = () => {
         <HeroCard />
       </div>
       {/* <Testimonial /> */}
+      <div className="md:pb-[900px] pb-[700px]">
       <Slider />
+      </div>
       {/* <div className="pt-[900px]">
         <Details />
       </div> */}

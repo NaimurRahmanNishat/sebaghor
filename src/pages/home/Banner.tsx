@@ -43,7 +43,7 @@ const Banner = () => {
                     <li>
                       <Link
                         to="/doctor"
-                        className="underline  hover:text-white/60 pl-2"
+                        className="underline  hover:text-black/60 pl-2"
                       >
                         Dentist,
                       </Link>
@@ -51,7 +51,7 @@ const Banner = () => {
                     <li>
                       <Link
                         to="/doctor"
-                        className="underline  hover:text-white/60"
+                        className="underline  hover:text-black/60"
                       >
                         Dermatologist,
                       </Link>
@@ -59,7 +59,7 @@ const Banner = () => {
                     <li className="w-full sm:w-auto">
                       <Link
                         to="/doctor"
-                        className="underline  hover:text-white/60"
+                        className="underline  hover:text-black/60"
                       >
                         Immunodermatologist,
                       </Link>
@@ -67,7 +67,7 @@ const Banner = () => {
                     <li>
                       <Link
                         to="/doctor"
-                        className="underline  hover:text-white/60"
+                        className="underline hover:text-black/60"
                       >
                         Gynaecologist
                       </Link>

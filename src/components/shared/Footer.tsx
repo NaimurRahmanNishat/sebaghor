@@ -122,12 +122,12 @@ const Footer = () => {
           <div className="pt-12 pb-12 overflow-x-hidden">
             <img src={payment} alt="" />
           </div>
-          <div className="flex items-center justify-between pb-12">
+          <div className="flex flex-col md:flex-row md:items-center justify-between pb-12">
             <p>
               Copyright © 2025. All Rights Reserved By <span className="underline text-darkGreen">Amar Sebaghar</span>. Developed
               by <span className="text-orange-500 font-medium underline">PnH IT Solution</span>
             </p>
-            <div className="flex justify-end gap-2">
+            <div className="flex md:justify-end gap-2 pt-4">
               <div className="p-2 rounded-full bg-white text-black cursor-pointer hover:bg-simpleGreen hover:text-white">
                 <Instagram />
               </div>
